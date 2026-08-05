@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width: 1200px;
+    background: #0b0b10;
+    font-family: "Noto Sans SC", sans-serif;
+    color: #eee;
+    overflow: hidden;
+    position: relative;
+  }
+  /* ambient glows */
+  .glow { position:absolute; border-radius:50%; filter: blur(120px); opacity:.45; pointer-events:none; }
+  .g1 { width:700px;height:700px; background:#5b2a86; top:-250px; left:-200px; }
+  .g2 { width:600px;height:600px; background:#173a6b; bottom:-200px; right:-150px; }
+  .g3 { width:400px;height:400px; background:#8a2b4a; top:45%; left:38%; opacity:.25; }
+
+  .wrap { position:relative; padding: 56px 64px 48px; }
+
+  header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:36px; }
+  .title h1 {
+    font-size: 74px; font-weight: 900; letter-spacing: 4px; line-height:1.05;
+    background: linear-gradient(92deg,#fff 20%, #b78cff 55%, #ff7ab8 85%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .title .sub { margin-top:10px; font-size:18px; letter-spacing:8px; color:#9a9ab0; }
+  .badge {
+    text-align:right; font-size:14px; color:#c9c9dd; letter-spacing:3px; line-height:1.9;
+    border:1px solid rgba(255,255,255,.25); padding:14px 20px; border-radius:12px;
+    background: rgba(255,255,255,.04); backdrop-filter: blur(4px);
+  }
+  .badge b { color:#ffb1d4; font-size:16px; letter-spacing:2px; }
+
+  /* collage wall */
+  .wall { display:grid; grid-template-columns: repeat(12, 1fr); gap:18px; }
+  .ph { border-radius:10px; overflow:hidden; position:relative; box-shadow: 0 14px 40px rgba(0,0,0,.55); }
+  .ph img { width:100%; height:100%; object-fit:cover; display:block; }
+  .ph::after { content:""; position:absolute; inset:0; border-radius:10px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
+
+  /* layout — asymmetric masonry */
+  .a { grid-column: span 5; grid-row: span 2; height: 560px; }   /* EVA mecha */
+  .b { grid-column: span 4; height: 270px; }
+  .c { grid-column: span 3; height: 270px; }
+  .d { grid-column: span 3; height: 272px; }
+  .e { grid-column: span 4; height: 272px; }
+  .f { grid-column: span 4; height: 300px; }
+  .g { grid-column: span 4; height: 300px; }
+  .h { grid-column: span 4; height: 300px; }
+  .i { grid-column: span 3; height: 340px; }
+  .j { grid-column: span 5; height: 340px; }
+  .k { grid-column: span 4; height: 340px; }
+  .l { grid-column: span 12; height: 520px; background:#050508; }
+  .l img.bgblur { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter: blur(28px) brightness(.55); transform: scale(1.15); }
+  .l img.main { position:relative; width:auto; max-width:100%; height:100%; margin:0 auto; object-fit:contain; }
+
+  .tag {
+    position:absolute; left:10px; bottom:10px; z-index:2;
+    font-size:12px; letter-spacing:2px; padding:4px 10px; border-radius:20px;
+    background: rgba(0,0,0,.55); color:#fff; backdrop-filter: blur(3px);
+    border:1px solid rgba(255,255,255,.2);
+  }
+  a.tag { text-decoration:none; display:inline-block; cursor:pointer; transition: all .2s; }
+  a.tag:hover { background: rgba(183,140,255,.75); border-color:#b78cff; }
+  a.tag.hot { border-color:#ff7ab8; box-shadow:0 0 12px rgba(255,122,184,.45); }
+  a.tag.hot::after { content:" ›"; color:#ffb1d4; }
+
+  footer {
+    margin-top:38px; display:flex; justify-content:space-between; align-items:center;
+    border-top:1px solid rgba(255,255,255,.15); padding-top:22px;
+  }
+  footer .big { font-size:26px; font-weight:800; letter-spacing:6px; color:#fff; }
+  footer .big span { color:#ff7ab8; }
+  footer .info { font-size:15px; color:#a7a7c0; letter-spacing:2px; text-align:right; line-height:1.8; }
+</style>
+</head>
+<body>
+  <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>COSPLAY 场照集</h1>
+        <div class="sub">CONVENTION &nbsp;PHOTOGRAPHY &nbsp;WORKS</div>
+      </div>
+      <div class="badge">
+        <b>场照接单中</b><br>
+        漫展 / 正片 / 后期合成<br>
+        欢迎私信约拍
+      </div>
+    </header>
+
+    <div class="wall">
+      <div class="ph a"><img src="p1.png"><a class="tag hot" href="asuka.html">EVA · 明日香 × 二号机</a></div>
+      <div class="ph b"><img src="p9.jpg"><a class="tag hot" href="krul.html">终结的炽天使—克鲁鲁</a></div>
+      <div class="ph c"><img src="p7.jpg"><a class="tag hot" href="menma.html">面码</a></div>
+      <div class="ph d"><img src="p3.jpg"><a class="tag hot" href="baoqing.html">宝青坊主</a></div>
+      <div class="ph e"><img src="p4.jpg"><a class="tag hot" href="iso.html">VALORANT · 壹决</a></div>
+      <div class="ph f"><img src="p10.jpg"><a class="tag hot" href="asuka.html">EVA · 明日香</a></div>
+      <div class="ph g"><img src="p6.jpg"><a class="tag hot" href="neon.html">NEON · 霓虹</a></div>
+      <div class="ph h"><img src="p8.jpg"><a class="tag hot" href="clove.html">CLOVE</a></div>
+      <div class="ph i"><img src="p11.jpg"><a class="tag hot" href="clove.html">慕蝶</a></div>
+      <div class="ph j"><img src="p2.jpg"><a class="tag hot" href="xilian.html">昔涟</a></div>
+      <div class="ph k"><img src="p5.jpg"><a class="tag hot" href="iso.html">ISO · 破碎</a></div>
+      <div class="ph l"><img class="bgblur" src="p12.jpg"><img class="main" src="p12.jpg"><a class="tag hot" href="clove.html">慕蝶</a></div>
+    </div>
+
+    <footer>
+      <div class="big">快门定格热爱 <span>/</span> 镜头记录次元</div>
+      <div class="info">摄影 & 后期：<b style="color:#ffb1d4;">克劳德Cloud</b><br>
+      微信：WilliamsCHY0124　｜　抖音：76991914498<br>
+      小红书：627195008　·　更多作品欢迎戳主页</div>
+    </footer>
+  </div>
+</body>
+</html>
